@@ -24,7 +24,7 @@ module.exports = {
         };
 
         interaction.reply({
-          content: `**Voici la liste des salades disponibles :**\n${result.map(e => `> - \`${e.salade}\``).join("\n")}${resultAddSalade ? `\n\n➜ Utilisez les commandes \`/ajouter-salade\` et \`/supprimer-salade\` pour ajouter ou supprimer un type de salade !**`: ""}`,
+          content: `**Voici la liste des salades disponibles :**\n${result.map(e => `> - \`${e.salade}\``).join("\n")}${resultAddSalade ? `\n\n➜ Utilisez les commandes \`/ajouter-salade\` et \`/supprimer-salade\` pour ajouter ou supprimer un type de salade !`: ""}`,
           ephemeral: true,
         });
       });

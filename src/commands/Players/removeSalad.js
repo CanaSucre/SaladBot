@@ -38,7 +38,7 @@ module.exports = {
           return;
         };
 
-        interaction.reply({ content: `✅ **Vous venez de supprimer avec succès la salade ${saladName} de la base de données !**`, ephemeral: true });
+        interaction.reply({ content: `✅ **Vous venez de supprimer avec succès la salade \`${saladName}\` de la base de données !**`, ephemeral: true });
       });
 
     });

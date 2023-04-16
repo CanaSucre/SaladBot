@@ -42,7 +42,7 @@ module.exports = {
           return;
         };
   
-        interaction.reply({ content: `✅ **Vous venez d'ajouter la salade \`${saladName}\` dans la base de données avec succès !` })
+        interaction.reply({ content: `✅ **Vous venez d'ajouter la salade \`${saladName}\` dans la base de données avec succès !**` })
       });
     });
     

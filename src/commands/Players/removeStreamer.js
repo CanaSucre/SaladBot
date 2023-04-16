@@ -38,7 +38,7 @@ module.exports = {
           return;
         };
 
-        interaction.reply({ content: `✅ **Vous venez de supprimer le streamer ${streamer} de la base de données !** Il avait sélectionné la salade : \`${result}\`.`, ephemeral: true });
+        interaction.reply({ content: `✅ **Vous venez de supprimer le streamer \`${streamer}\` de la base de données !** Il avait sélectionné la salade : \`${result.salade}\`.`, ephemeral: true });
       });
     });
   },
