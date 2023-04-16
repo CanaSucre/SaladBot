@@ -45,7 +45,7 @@ module.exports = {
   
           bot.checkSalade(salade, async function (salad) {
             if (!salad) {
-              interaction.reply({ content: `🥗 **La salade que vous venez d'indiquer est invalide !**\n\n> Utilisez la commande \`/list-salade\` pour afficher la liste des salades disponibles !`, ephemeral: true, });
+              interaction.reply({ content: `🥗 **La salade que vous venez d'indiquer est invalide !**\n\n> Utilisez la commande \`/liste-salades\` pour afficher la liste des salades disponibles !`, ephemeral: true, });
               return;
             };
     

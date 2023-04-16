@@ -21,10 +21,7 @@ module.exports = {
 
     bot.getSalad(streamer, async function (result) {
       if (result == false) {
-        interaction.reply({
-          content: `⚠️ **Une erreur est survenue avec la base de données !**`,
-          ephemeral: true,
-        });
+        interaction.reply({ content: `⚠️ **Une erreur est survenue avec la base de données !**`, ephemeral: true });
         return;
       };
       
