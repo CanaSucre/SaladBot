@@ -4,7 +4,7 @@ module.exports = {
   name: "enregistrer",
   description: "Enregistrer la salade préférée d'un streamer !",
   permission: "add_streamer",
-  dev: true,
+  dev: false,
   guildId: [ "1006326620744855603" ],
   options: [
     {

@@ -2,7 +2,7 @@ module.exports = {
   name: "liste-salades",
   description: "Afficher la liste de toutes les salades disponibles !",
   permission: null,
-  dev: true,
+  dev: false,
   guildId: [ "1006326620744855603" ],
   options: [],
 

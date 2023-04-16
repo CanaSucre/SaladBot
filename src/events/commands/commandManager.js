@@ -39,7 +39,7 @@ module.exports = {
   
         if (!result) {
           interaction.reply({
-            content: `❌ **Désolé, vous devez avoir la permission \`${slashCommand.permission}\` pour effectuer cette commande !**`,
+            content: `❌ **Désolé, vous devez avoir la permission \`${slashCommand.permission}\` pour effectuer cette commande !**\n\n> Contactez \`Cana_sucre#9999\` pour récupérer cette permission.`,
             ephemeral: true,
           });
           return;

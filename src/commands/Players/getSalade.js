@@ -2,9 +2,9 @@ const { ApplicationCommandOptionType } = require("discord.js");
 
 module.exports = {
   name: "salade",
-  description: "Retrouver la salade prononcée par un streamer grâce à son pseudo !",
+  description: "Retrouver la salade préférée d'un streamer grâce à son pseudo !",
   permission: null,
-  dev: true,
+  dev: false,
   guildId: [ "1006326620744855603" ],
   options: [
     {

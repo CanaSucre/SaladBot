@@ -4,7 +4,7 @@ module.exports = {
   name: "ajouter-salade",
   description: "Ajouter une salade dans la liste des salades disponibles !",
   permission: "manage_salad",
-  dev: true,
+  dev: false,
   guildId: [ "1006326620744855603" ],
   options: [
     {

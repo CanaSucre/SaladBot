@@ -3,8 +3,8 @@ const { ApplicationCommandOptionType } = require("discord.js");
 module.exports = {
   name: "supprimer-streamer",
   description: "Retirer un streamer de la base de données !",
-  permission: "manage_salad",
-  dev: true,
+  permission: "remove_streamer",
+  dev: false,
   guildId: [ "1006326620744855603" ],
   options: [
     {
