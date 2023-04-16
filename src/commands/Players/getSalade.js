@@ -2,7 +2,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
 
 module.exports = {
   name: "salade",
-  description: "Retrouver la salade prononcée par un streamer par son pseudo !",
+  description: "Retrouver la salade prononcée par un streamer grâce à son pseudo !",
   permission: null,
   dev: true,
   guildId: [ "1006326620744855603" ],
@@ -34,6 +34,7 @@ module.exports = {
           ephemeral: true,
         });
         return;
+        
       };
 
       interaction.reply({

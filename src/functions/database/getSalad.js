@@ -4,18 +4,18 @@ module.exports = async bot => {
   * @param {object} bot The Discord Client Istance 
   */
 
-  bot.getSalad = async (streamer, callbak) => {
+  bot.getSalad = async (streamer, callback) => {
 
     let SQL = `SELECT * FROM streamer WHERE streamer = "${streamer}"`;
 
     bot.db.query(SQL, async (err, result) => {
       if (err) {
         console.log(err);
-        callbak(false);
+        callback(false);
       } else if (!result[0]) {
-        callbak(null);
+        callback(null);
       } else {
-        callbak(result[0]);
+        callback(result[0]);
       };
     });
   };
