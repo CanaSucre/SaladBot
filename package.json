@@ -1,0 +1,24 @@
+{
+  "name": "saladbot",
+  "version": "0.1.0",
+  "description": "Official bot for Salad Community on PetitStream.com",
+  "main": "saladStart.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CanaSucre/SaladBot.git"
+  },
+  "author": "Cana_sucre",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CanaSucre/SaladBot/issues"
+  },
+  "homepage": "https://github.com/CanaSucre/SaladBot#readme",
+  "dependencies": {
+    "discord.js": "14.9.0",
+    "mysql": "2.18.1",
+    "q": "1.5.1"
+  }
+}
