@@ -1,14 +1,16 @@
+const { ApplicationCommandOptionType } = require("discord.js");
+
 module.exports = {
   name: "salade",
   description: "Retrouver la salade prononcée par un streamer par son pseudo !",
   permission: null,
   dev: true,
-  guildId: [""],
+  guildId: [ "1006326620744855603" ],
   options: [
     {
       name: "streamer",
       description: "Pseudo du streamer recherché",
-      type: "STRING",
+      type: ApplicationCommandOptionType.String,
       required: true,
     },
   ],
@@ -28,17 +30,14 @@ module.exports = {
       
       if (result == null) {
         interaction.reply({
-          content: `😭 **\`${streamer}\` n'est actuellement pas enregistré dans la base de données !`,
+          content: `😭 **\`${streamer}\` n'est actuellement pas enregistré dans la base de données !**`,
           ephemeral: true,
         });
         return;
       };
 
       interaction.reply({
-        content: `🥗 **La salade préférée de \`${result.streamer}\` est la salade : \`${result.salade}\` !
-> **Enregistré par :** <@${result.saisie}>
-${result.last_edit ? `> **Dernière modification par :** <@${result.last_edit}>`: ""}
-        `,
+        content: `🥗 La salade préférée de \`${result.streamer}\` est la salade \`${result.salade}\` !\n\n> **Enregistré par :** <@${result.saisie}>${result.last_edit ? `\n> **Dernière modification par :** <@${result.last_edit}>`: ""}`,
         ephemeral: true,
       });
 

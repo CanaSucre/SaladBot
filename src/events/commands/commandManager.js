@@ -8,7 +8,7 @@ module.exports = {
     if (interaction.user.bot) return;
     if (!interaction.guild) return;
 
-    let slashCommand = bot.slashCmds.get(interaction.commandName);
+    let slashCommand = bot.commands.get(interaction.commandName);
 
     if (!slashCommand) {
       interaction.reply({
@@ -49,7 +49,6 @@ module.exports = {
     };
 
     slashCommand.run(bot, interaction, cmdOptions)
-
 
   },
 };

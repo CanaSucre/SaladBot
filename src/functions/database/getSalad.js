@@ -6,10 +6,11 @@ module.exports = async bot => {
 
   bot.getSalad = async (streamer, callbak) => {
 
-    let SQL = `SELECT * FROM streamer WHERE streamer = ${streamer}`;
+    let SQL = `SELECT * FROM streamer WHERE streamer = "${streamer}"`;
 
-    bot.db.querry(SQL, async (err, result) => {
+    bot.db.query(SQL, async (err, result) => {
       if (err) {
+        console.log(err);
         callbak(false);
       } else if (!result[0]) {
         callbak(null);

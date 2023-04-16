@@ -1,9 +1,12 @@
-const { Client } = require("discord.js");
+const { Client, Collection } = require("discord.js");
+const { readdirSync } = require("fs");
 let bot = new Client({ intents: 3243773 });
 
 bot.config = require("./config");
+bot.commands = new Collection();
 
 bot.login(bot.config.TOKEN);
+
 
 loadCommands(bot);
 loadEvents(bot);
@@ -31,7 +34,7 @@ async function loadEvents(bot, dir = "./src/events") {
   });
 };
 
-async function loadScripts(bot, dir = "./src/scripts") {
+async function loadScripts(bot, dir = "./src/functions") {
   readdirSync(dir).forEach(dirs => {
     const scripts = readdirSync(`${dir}/${dirs}/`).filter(files => files.endsWith(".js"));
 

@@ -3,7 +3,7 @@ module.exports = {
   description: "Redémarrer le Bot",
   permission: null,
   dev: true,
-  guildId: [""],
+  guildId: [ "1006326620744855603" ],
   options: [],
 
   run: async (bot, interaction, options) => {
