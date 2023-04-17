@@ -1,7 +1,7 @@
 const { ApplicationCommandOptionType } = require("discord.js");
 
 module.exports = {
-  name: "salade",
+  name: "salade-retrouver-streamer",
   description: "Retrouver la salade préférée d'un streamer grâce à son pseudo !",
   permission: null,
   dev: false,
@@ -28,15 +28,23 @@ module.exports = {
       if (result == null) {
         interaction.reply({
           content: `😭 **\`${streamer}\` n'est actuellement pas enregistré dans la base de données !**`,
-          ephemeral: true,
         });
         return;
         
       };
 
+      let register = bot.users.cache.get(result.saisie);
+      let edited = result.last_edit ? bot.users.cache.get(result.saisie): null;
+
+      if (!register) register = result.saisie;
+      else register = register.tag;
+
+      if (!edited && result.last_edit) edited = result.last_edit;
+      else edited = edited.tag;
+
       interaction.reply({
-        content: `🥗 La salade préférée de \`${result.streamer}\` est la salade \`${result.salade}\` !\n\n> **Enregistré par :** <@${result.saisie}>${result.last_edit ? `\n> **Dernière modification par :** <@${result.last_edit}>`: ""}`,
-        ephemeral: true,
+        content: `🥗 La salade préférée de \`${result.streamer}\` est la salade \`${result.salade}\` !\n\n> **Enregistré par :** \`${register}\`${result.last_edit ? `\n> **Dernière modification par :** \`${edited}\``: ""}`,
+        ephemeral: true 
       });
 
     });

@@ -1,8 +1,8 @@
 const { ApplicationCommandOptionType } = require("discord.js");
 
 module.exports = {
-  name: "enregistrer",
-  description: "Enregistrer la salade préférée d'un streamer !",
+  name: "salade-ajouter-streamer",
+  description: "Ajouter la salade préférée d'un streamer !",
   permission: "add_streamer",
   dev: false,
   guildId: [ "1006326620744855603" ],
@@ -45,7 +45,7 @@ module.exports = {
   
           bot.checkSalade(salade, async function (salad) {
             if (!salad) {
-              interaction.reply({ content: `🥗 **La salade que vous venez d'indiquer est invalide !**\n\n> Utilisez la commande \`/liste-salades\` pour afficher la liste des salades disponibles !`, ephemeral: true, });
+              interaction.reply({ content: `🥗 **La salade que vous venez d'indiquer est invalide !**\n\n> Utilisez la commande \`/salade-liste-type\` pour afficher la liste des salades disponibles !`, ephemeral: true, });
               return;
             };
     
@@ -66,28 +66,35 @@ module.exports = {
                   return;
                 };
     
-                interaction.reply({ content: `✅ **Vous venez de changer la salade préférée de \`${streamer}\` de la salade \`${result.salade}\` à \`${salade}\` !**`, ephemeral: true, });
+                interaction.reply({ content: `✅ **Vous venez de changer la salade préférée de \`${streamer}\` de la salade \`${result.salade}\` à \`${salad}\` !**`, ephemeral: true  });
               });
             });
           });
         });
       } else {
-        let post = {
-          streamer: streamer,
-          salade: salade,
-          saisie: interaction.user.id
-        };
-
-        let SQL = `INSERT INTO streamer SET ?`
-
-        bot.db.query(SQL, post, (err, result2) => {
-          if (err) {
-            console.log(err);
-            interaction.reply({ content: `⚠️ **Une erreur est survenue avec la base de données !**`, ephemeral: true, });
+        bot.checkSalade(salade, async function (salad) {
+          if (!salad) {
+            interaction.reply({ content: `🥗 **La salade que vous venez d'indiquer est invalide !**\n\n> Utilisez la commande \`/salade-liste-type\` pour afficher la liste des salades disponibles !`, ephemeral: true, });
             return;
-          }
-
-          interaction.reply({ content: `✅ **Vous venez de définir la salade préférée de \`${streamer}\` sur la salade \`${salade}\` !**`, ephemeral: true, });
+          };
+          
+          let post = {
+            streamer: streamer,
+            salade: salad,
+            saisie: interaction.user.id
+          };
+  
+          let SQL = `INSERT INTO streamer SET ?`
+  
+          bot.db.query(SQL, post, (err, result2) => {
+            if (err) {
+              console.log(err);
+              interaction.reply({ content: `⚠️ **Une erreur est survenue avec la base de données !**`, ephemeral: true, });
+              return;
+            }
+  
+            interaction.reply({ content: `✅ **Vous venez de définir la salade préférée de \`${streamer}\` sur la salade \`${salad}\` !**`, ephemeral: true  });
+          });
         });
       };
 

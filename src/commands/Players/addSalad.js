@@ -1,15 +1,15 @@
 const { ApplicationCommandOptionType } = require("discord.js");
 
 module.exports = {
-  name: "ajouter-salade",
+  name: "salade-ajouter-type",
   description: "Ajouter une salade dans la liste des salades disponibles !",
   permission: "manage_salad",
   dev: false,
   guildId: [ "1006326620744855603" ],
   options: [
     {
-      name: "salade",
-      description: "Nom de la salade à ajouter",
+      name: "type",
+      description: "Nom du type de salade à ajouter",
       type: ApplicationCommandOptionType.String,
       required: true,
     },
@@ -17,7 +17,7 @@ module.exports = {
 
   run: async (bot, interaction, options) => {
 
-    let saladName = options["salade"].value;
+    let saladName = options["type"].value;
 
     bot.checkSalade(saladName, async function (resultCheckSalade) {
       if (resultCheckSalade == null) {
@@ -42,7 +42,7 @@ module.exports = {
           return;
         };
   
-        interaction.reply({ content: `✅ **Vous venez d'ajouter la salade \`${saladName}\` dans la base de données avec succès !**` })
+        interaction.reply({ content: `✅ **Vous venez d'ajouter la salade \`${saladName}\` dans la base de données avec succès !**`, ephemeral: true  })
       });
     });
     

@@ -29,7 +29,7 @@ module.exports = {
         },
         {
           name: "Supprimer un Streamer",
-          value: "delete_streamer",
+          value: "remove_streamer",
         },
         {
           name: "Gérer les Salades",
@@ -53,7 +53,7 @@ module.exports = {
         return;
       };
 
-      if (result) {
+      if (result[0]) {
         let SQL2 = `UPDATE list_users SET ${permission} = "1" WHERE id = "${userId}"`;
         
         bot.db.query(SQL2, (err, result) => {

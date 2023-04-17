@@ -10,7 +10,7 @@ module.exports = async bot => {
       bot.logger("ERROR", "Un bot.logger() ne contient pas de type ou de text !")
     };
 
-    type = type.toLowerCase();
+    type = type.toUpperCase();
 
     console.log(`[SALAD] - ${type} - ${text}`);
   };

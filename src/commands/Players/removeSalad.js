@@ -1,15 +1,15 @@
 const { ApplicationCommandOptionType } = require("discord.js");
 
 module.exports = {
-  name: "supprimer-salade",
+  name: "salade-supprimer-type",
   description: "Retirer une salade dans la liste des salades disponibles !",
   permission: "manage_salad",
   dev: false,
   guildId: [ "1006326620744855603" ],
   options: [
     {
-      name: "salade",
-      description: "Nom de la salade à supprimer",
+      name: "type",
+      description: "Nom du type de salade à supprimers",
       type: ApplicationCommandOptionType.String,
       required: true,
     },
@@ -17,7 +17,7 @@ module.exports = {
 
   run: async (bot, interaction, options) => {
 
-    let saladName = options["salade"].value;
+    let saladName = options["type"].value;
 
     bot.checkSalade(saladName, async function (resultCheckSalade) {
       if (resultCheckSalade == null) {
@@ -38,7 +38,7 @@ module.exports = {
           return;
         };
 
-        interaction.reply({ content: `✅ **Vous venez de supprimer avec succès la salade \`${saladName}\` de la base de données !**`, ephemeral: true });
+        interaction.reply({ content: `✅ **Vous venez de supprimer avec succès la salade \`${saladName}\` de la base de données !**`, ephemeral: true  });
       });
 
     });

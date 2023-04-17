@@ -14,7 +14,7 @@ module.exports = async bot => {
         callback(null);
       } else if (!results[0]) {
         callback(false);
-      } else callback(true);
+      } else callback(results[0].salade);
     });
 
   };

@@ -1,6 +1,6 @@
 module.exports = {
-  name: "liste-salades",
-  description: "Afficher la liste de toutes les salades disponibles !",
+  name: "salade-liste-type",
+  description: "Afficher la liste de touts les types de salades disponibles !",
   permission: null,
   dev: false,
   guildId: [ "1006326620744855603" ],
@@ -24,7 +24,7 @@ module.exports = {
         };
 
         interaction.reply({
-          content: `**Voici la liste des salades disponibles :**\n${result.map(e => `> - \`${e.salade}\``).join("\n")}${resultAddSalade ? `\n\n➜ Utilisez les commandes \`/ajouter-salade\` et \`/supprimer-salade\` pour ajouter ou supprimer un type de salade !`: ""}`,
+          content: `**Voici la liste des salades disponibles :**\n${result.map(e => `> - \`${e.salade}\``).join("\n")}\n\n> **Il y a ${result.length} types de salades enregistrés !**${resultAddSalade ? `\n➜ Utilisez les commandes \`/salade-ajouter-type\` et \`/salade-supprimer-type\` pour ajouter ou supprimer un type de salade !`: ""}`,
           ephemeral: true,
         });
       });

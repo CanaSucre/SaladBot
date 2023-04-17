@@ -6,16 +6,22 @@ module.exports = async bot => {
 
   bot.reloadSlash = async () => {
 
-    bot.commands.forEach(cmd => {
-      cmd.guildId.forEach(guildId => {
+    bot.application.commands.set([])
 
-        bot.application.commands.create({
-          name: cmd.name,
-          description: cmd.description,
-          options: cmd.options,
-        }, guildId);
+    bot.guilds.cache.forEach(guild => {
+      let listCmds = [];
 
+      bot.commands.forEach(cmd => {
+        if (cmd.guildId.includes(guild.id)) {
+          listCmds.push({
+            name: cmd.name,
+            description: cmd.description,
+            options: cmd.options,
+          });
+        };
       });
+
+      guild.commands.set(listCmds);
     });
 
   };
