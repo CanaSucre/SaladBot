@@ -5,7 +5,7 @@ module.exports = {
   description: "Afficher les salades préférées de 10 streamers aléatoires dans la base de données !",
   permission: null,
   dev: false,
-  guildId: [ "1006326620744855603" ],
+  guildId: [ "1006326620744855603", "1002902115267657759" ],
   options: [],
 
   run: async (bot, interaction, options) => {

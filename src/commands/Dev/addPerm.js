@@ -71,7 +71,7 @@ module.exports = {
           add_streamer: permission == "add_streamer" ? true: false,
           edit_streamer: permission == "edit_streamer" ? true: false,
           remove_streamer: permission == "remove_streamer" ? true: false,
-          manade_salad: permission == "manade_salad" ? true: false,
+          manage_salad: permission == "manade_salad" ? true: false,
         };
 
         let SQL2 = `INSERT INTO list_users SET ?`;

@@ -5,7 +5,7 @@ module.exports = {
   description: "Retirer un streamer de la base de données !",
   permission: "remove_streamer",
   dev: false,
-  guildId: [ "1006326620744855603" ],
+  guildId: [ "1006326620744855603", "1002902115267657759" ],
   options: [
     {
       name: "streamer",

@@ -5,7 +5,7 @@ module.exports = {
   description: "Retrouver la salade préférée d'un streamer grâce à son pseudo !",
   permission: null,
   dev: false,
-  guildId: [ "1006326620744855603" ],
+  guildId: [ "1006326620744855603", "1002902115267657759" ],
   options: [
     {
       name: "streamer",

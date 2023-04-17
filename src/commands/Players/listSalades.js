@@ -3,7 +3,7 @@ module.exports = {
   description: "Afficher la liste de touts les types de salades disponibles !",
   permission: null,
   dev: false,
-  guildId: [ "1006326620744855603" ],
+  guildId: [ "1006326620744855603", "1002902115267657759" ],
   options: [],
 
   run: async (bot, interaction, options) => {
