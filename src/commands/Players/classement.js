@@ -10,8 +10,6 @@ module.exports = {
 
   run: async (bot, interaction, options) => {
 
-    interaction.reply(`👀 **Veuillez patienter, nous chargeons la base de données...**`)
-
     let sql = "SELECT * FROM streamer";
 
     bot.db.query(sql, async (err, result) => {
@@ -47,7 +45,6 @@ module.exports = {
 
       interaction.reply({
         embeds: [embed],
-        content: ``,
       });
 
     });

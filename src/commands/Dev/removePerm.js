@@ -29,7 +29,7 @@ module.exports = {
         },
         {
           name: "Supprimer un Streamer",
-          value: "delete_streamer",
+          value: "remove_streamer",
         },
         {
           name: "Gérer les Salades",
@@ -71,7 +71,7 @@ module.exports = {
           add_streamer: false,
           edit_streamer: false,
           remove_streamer: false,
-          manade_salad: false,
+          manage_salad: false,
         };
 
         let SQL2 = `INSERT INTO list_users SET ?`;
